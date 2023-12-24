@@ -25,18 +25,16 @@ x = torch.rand(100,100).to('cuda:0') # This will place the tensor on the first G
 # Function to perform matrix multiplication on GPU and measure time
 def gpu_multiply(x,y):
     # Send data to GPU
-    x.to('cuda')
-    y.to('cuda')
+    x_gpu = x.to('cuda')
+    y_gpu = y.to('cuda')
     start = time.time()
-    torch.matmul(x, y)
+    torch.matmul(x_gpu, y_gpu)
     torch.cuda.synchronize()  # Wait for the multiply to finish
     return time.time() - start
 
 # Function to perform matrix multiplication on CPU and measure time
 def cpu_multiply(x,y):
     # Send data to CPU instead of GPU
-    x.to('cpu')
-    y.to('cpu')
     start = time.time()
     torch.matmul(x, y)
     return time.time() - start
@@ -70,3 +68,5 @@ plt.legend()
 plt.grid(True)
 plt.yscale('log')  # Use logarithmic scale for better visibility on large ranges
 plt.show()
+
+# The initial GPU time is much slower because it is initializing CUDA and the GPU
