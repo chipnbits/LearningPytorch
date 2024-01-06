@@ -40,7 +40,7 @@ def cpu_multiply(x,y):
     return time.time() - start
 
 # Sizes of matrices to test
-sizes = [100, 500, 1000, 2000, 4000, 8000]
+sizes = [100, 500, 1000, 2000, 4000, 8000, 32000]
 gpu_times = []
 cpu_times = []
 
