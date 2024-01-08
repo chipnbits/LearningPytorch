@@ -2,7 +2,7 @@ from sklearn.cluster import KMeans
 import numpy as np
 import cv2
 
-# Naive KNN Model
+
 class BagOfDescriptors:
     
     def __init__(self, clusters=5, regression_model = None):

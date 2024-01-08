@@ -1,3 +1,6 @@
 .vscode/
 data/__pycache__/load_data.cpython-311.pyc
 data/__pycache__/__init__.cpython-311.pyc
+wandb/
+data/models
+*.pyc
